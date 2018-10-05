@@ -5,17 +5,16 @@
   </mat-expansion-panel-header>
 
   <mat-form-field>
-      <input matInput placeholder="Nombre" #userName >
+      <input matInput placeholder="Nombre" #userName>
   </mat-form-field>
 
-  <div>
+  <label>  </label>
 
-    <mat-form-field>
-        <input matInput placeholder="Fecha de nacimiento" [matDatepicker]="picker" (focus)="picker.open()" readonly #userFecha>
-    </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Fecha de nacimiento" [matDatepicker]="picker" (focus)="picker.open()" readonly #userFecha>
+  </mat-form-field>
 
-    <mat-datepicker #picker></mat-datepicker>
-  </div>
+  <mat-datepicker #picker></mat-datepicker>
 
   <mat-action-row>
       <button mat-button color="primary" (click)="newUser(userName.value,userFecha.value)" mat-raised-button
@@ -30,13 +29,13 @@
     <!-- Nombre Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let people" class="row-table"> {{people.data.nombre}} </td>
+      <td mat-cell *matCellDef="let people"> {{people.data.nombre}} </td>
     </ng-container>
   
     <!-- Fecha Column -->
     <ng-container matColumnDef="fecha">
       <th mat-header-cell *matHeaderCellDef> Fecha Cumpleaños </th>
-      <td mat-cell *matCellDef="let people" class="row-table"> {{people.data.fecha}} <mat-icon (click)="deleteUser(people.id)" class="row-table">delete_forver</mat-icon></td>
+      <td mat-cell *matCellDef="let people"> {{people.data.fecha}} <mat-icon (click)="deleteUser(people.id)">delete_forver</mat-icon></td>
     </ng-container>
  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
