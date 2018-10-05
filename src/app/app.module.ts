@@ -18,7 +18,7 @@ import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RolCumpleanosComponent } from './rol-cumpleanos/rol-cumpleanos.component';
-import { DialogPeopleComponent } from './people/people.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { DialogPeopleComponent } from './people/people.component';
     BirthdaysMonthComponent,
     FooterComponent,
     RolCumpleanosComponent,
-    DialogPeopleComponent,
   ],
   imports: [
     BrowserModule,

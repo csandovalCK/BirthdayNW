@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore/firestore.service';
 import {MatSnackBar} from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 
 export interface PeriodicElement {
   name: string;
@@ -39,7 +39,7 @@ export class PeopleComponent implements OnInit {
   public currentStatus = 1;
 
 
-  constructor(private firestoreService: FirestoreService, public snackBar: MatSnackBar, public dialog: MatDialog) {
+  constructor(private firestoreService: FirestoreService, public snackBar: MatSnackBar) {
 
   }
 
@@ -90,34 +90,6 @@ export class PeopleComponent implements OnInit {
     }, (error) => {
       console.error(error);
     });
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogPeopleComponent, {
-      width: '550px',
-      height: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
-}
-
-@Component({
-  selector: 'app-people-dialog',
-  templateUrl: 'people.component.dialog.html',
-})
-export class DialogPeopleComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogPeopleComponent>) {
-
-    }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 
 }
