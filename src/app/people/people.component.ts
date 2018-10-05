@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore/firestore.service';
 import {MatSnackBar} from '@angular/material';
 
+
 export interface PeriodicElement {
   name: string;
   fecha: string;

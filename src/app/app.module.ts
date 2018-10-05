@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RolCumpleanosComponent } from './rol-cumpleanos/rol-cumpleanos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

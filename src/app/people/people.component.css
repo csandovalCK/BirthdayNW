@@ -1,3 +1,15 @@
 table {
     width: 100%;
   }
+
+  .row-table{
+    text-align: left;
+  }
+
+  .icon-delete{
+    align-items: flex-end;
+  }
+
+  .elements{
+    align-items: flex-start;
+  }
