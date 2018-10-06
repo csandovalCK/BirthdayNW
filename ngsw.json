@@ -1,0 +1,57 @@
+{
+  "configVersion": 1,
+  "index": "/BirthdayNW/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/BirthdayNW/favicon.ico",
+        "/BirthdayNW/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/BirthdayNW/assets/iconx128a.png",
+        "/BirthdayNW/assets/iconx152.png",
+        "/BirthdayNW/assets/iconx256.png",
+        "/BirthdayNW/assets/iconx512.png",
+        "/BirthdayNW/assets/logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/BirthdayNW/assets/iconx128a.png": "f883f27f82a0fcf491996bc1cf9599add69c1df8",
+    "/BirthdayNW/assets/iconx152.png": "9d6fe1bca78fe30f27f38ca1df0e1e2ad7f616e9",
+    "/BirthdayNW/assets/iconx256.png": "dfa87bd98ea32fa7a475d4330b9f0516ca6550ff",
+    "/BirthdayNW/assets/iconx512.png": "ecb7b50f64ab6958671f4081fca5e33694f8a0a8",
+    "/BirthdayNW/assets/logo.png": "31a7e71854d756a03bcfe03420421d97b788ba49",
+    "/BirthdayNW/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/BirthdayNW/index.html": "398e4694781e0b78ceb1775d84f855055773ac27"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
