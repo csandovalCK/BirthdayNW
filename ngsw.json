@@ -17,6 +17,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/BirthdayNW/assets/cake.png",
         "/BirthdayNW/assets/iconx128a.png",
         "/BirthdayNW/assets/iconx152.png",
         "/BirthdayNW/assets/iconx256.png",
@@ -28,6 +29,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/BirthdayNW/assets/cake.png": "218635e9b994c2c6042624174a856e7c00378d7f",
     "/BirthdayNW/assets/iconx128a.png": "f883f27f82a0fcf491996bc1cf9599add69c1df8",
     "/BirthdayNW/assets/iconx152.png": "9d6fe1bca78fe30f27f38ca1df0e1e2ad7f616e9",
     "/BirthdayNW/assets/iconx256.png": "dfa87bd98ea32fa7a475d4330b9f0516ca6550ff",
