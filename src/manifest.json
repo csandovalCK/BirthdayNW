@@ -1,0 +1,26 @@
+{
+    "name": "Progressive Web BirthdayNW",
+    "short_name": "BirthdayNW",
+    "description": "A app watching birthday",  
+    "icons": [{
+      "src": "assets/iconx128a.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, {
+        "src": "assets/iconx152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      }, {
+        "src": "assets/iconx256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }, {
+        "src": "assets/iconx512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }],
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff5722"
+}

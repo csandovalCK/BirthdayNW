@@ -1,9 +1,15 @@
 <h1>{{title}}</h1>
 <mat-card>
+<ul *ngIf="people">
+  <div *ngFor="let people of people">
+    <div *ngIf="mesesSonIguales(people.data.fecha.toDate() | date: 'MM')">
+      <span>{{people.data.fecha.toDate() | date: 'dd'}}  </span>
+      <span>{{people.data.nombre}}</span>
+    </div>
+  </div>  
+</ul>  
+</mat-card>
 <p>
-  8    Cesar
-</p>
-<p>
-  30   Berenice
-</p>
-</mat-card>  
+  <img src="assets/cake.png"/>
+</p>   
+  

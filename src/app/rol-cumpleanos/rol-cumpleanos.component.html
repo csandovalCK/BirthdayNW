@@ -1,3 +1,81 @@
 <p>
-  rol-cumpleanos works!
+  Rol Cumpleaños
 </p>
+<mat-card>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+
+        <mat-expansion-panel-header>
+            <mat-icon matTooltip="Agregar nuevo rol">add</mat-icon>
+          </mat-expansion-panel-header>
+        <div>
+        <mat-form-field>
+            <mat-select placeholder="Cumpleanero" [formControl]="cumpleaneroControl" required #cumpleanero >
+              <option [ngValue]="null">Select Person</option>
+              <mat-option *ngFor="let people of people" [value]="people.data" >
+                {{people.data.nombre}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Fecha cumpleaños" #fechaCumpleanos value="{{convertDate(cumpleaneroControl.value?.fecha) | date: 'dd/MM/yyyy'}}">
+        </mat-form-field>
+
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Organizador 1" #organizador1>
+              <mat-option *ngFor="let people of people" [value]="people.data.nombre">
+                {{people.data.nombre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> 
+          
+          <mat-form-field>
+            <mat-select placeholder="Organizador 2" #organizador2>
+              <mat-option *ngFor="let people of people" [value]="people.data.nombre">
+                {{people.data.nombre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>  
+       
+      
+        <mat-action-row>
+            <button mat-button color="primary"  mat-raised-button type="submit"
+            matTooltip="Guardar nuevo Rol" (click)="newRol(cumpleaneroControl.value?.nombre,valorFecha,organizador1.value,organizador2.value)">Save</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+    <table mat-table [dataSource]="rol" class="mat-elevation-z8">
+ 
+        <!-- Nombre Column -->
+        <ng-container matColumnDef="cumpleanero">
+          <th mat-header-cell *matHeaderCellDef> Cumpleañero </th>
+          <td mat-cell *matCellDef="let rol" class="row-table"> {{rol.data.cumpleanero}} </td>
+        </ng-container>
+      
+        <!-- Fecha Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha Cumpleaños </th>
+          <td mat-cell *matCellDef="let rol" class="row-table"> {{rol.data.fechaCumpleanos.toDate() | date: 'dd/MM/yyyy'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="organizador1">
+            <th mat-header-cell *matHeaderCellDef> Organizador 1 </th>
+            <td mat-cell *matCellDef="let rol" class="row-table"> {{rol.data.organizador1}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="organizador2">
+              <th mat-header-cell *matHeaderCellDef> Organizador 2 </th>
+              <td mat-cell *matCellDef="let rol" class="row-table"> {{rol.data.organizador2}}
+                <mat-icon (click)="detleteRol(rol.id)">delete_forever</mat-icon>
+              </td>
+            </ng-container>  
+
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card>
+  

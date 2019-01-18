@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FirestoreService } from '../services/firestore/firestore.service';
 import {MatSnackBar} from '@angular/material';
 
@@ -29,12 +29,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PeopleComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'fecha'];
+  displayedColumns: string[] = ['name', 'fecha', 'actions' ];
   dataSource = ELEMENT_DATA;
   step = 0;
+  @ViewChild('userName') userName: ElementRef;
+  @ViewChild('userFecha') userFecha: ElementRef;
 
   public people = [];
-
   public documentId = null;
   public currentStatus = 1;
 
@@ -64,6 +65,7 @@ export class PeopleComponent implements OnInit {
   }
 
   public newUser(nombreForm, fechaForm, documentId = this.documentId) {
+     console.log('nombre nuevo: ' + nombreForm + ' fechaa:' + fechaForm);
     if (nombreForm === '' && fechaForm === '' ) {
         this.snackBar.open('Capture todos los datos', '', {
           duration: 2000,
@@ -73,10 +75,12 @@ export class PeopleComponent implements OnInit {
       if (this.currentStatus === 1) {
         const data = {
           nombre: nombreForm,
-          fecha: fechaForm
+          fecha: new Date(fechaForm)
         };
         this.firestoreService.addNewUser(data).then(() => {
           console.log('Documento creado exitósamente!');
+          this.userName.nativeElement.value = '';
+          this.userFecha.nativeElement.value = '';
         }, (error) => {
           console.error(error);
         });

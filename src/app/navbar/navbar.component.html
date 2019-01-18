@@ -5,7 +5,7 @@
   [(opened)]="opened" >
 
     <mat-toolbar color="accent">
-        <img src="../../assets/logo.png" style="max-width:    60%; min-width: 13%"/>
+        <img src="assets/logo.png" style="max-width:    60%; min-width: 13%"/>
     </mat-toolbar>
 
     <mat-nav-list>
@@ -17,6 +17,9 @@
       </a>
       <a mat-list-item href="#" routerLink="/rolCumpleanos" (click)="sidenav.toggle()">
         <mat-icon>perm_contact_calendar</mat-icon>   Rol de Cumpleaños
+      </a>
+      <a mat-list-item href="#" routerLink="/evento" (click)="sidenav.toggle()">
+        <mat-icon>event_available</mat-icon>  Nuevo Evento
       </a>  
     </mat-nav-list>
   </mat-sidenav>
